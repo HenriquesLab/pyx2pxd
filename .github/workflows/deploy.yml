@@ -81,45 +81,52 @@ jobs:
             platform_id: macosx_arm64
 
     steps:
-      - 
-        name: Checkout pyx2pxd
+      - name: Checkout pyx2pxd
         uses: actions/checkout@v3
 
-      - 
-        name: Setup Python
+      - name: Setup Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'  # update once build dependencies are available
 
-      - 
-        name: Install cibuildwheel
-        run: python -m pip install cibuildwheel>=2.11.4
+      - name: Install pypa/build
+        run: >-
+          python -m
+          pip install
+          build
+          --user
+      - name: Build a binary wheel and a source tarball
+        run: >-
+          python -m build --sdist --wheel --outdir dist/
 
-      - 
-        name: Build and test wheels
-        env:
-          CIBW_BEFORE_ALL_LINUX: "yum install opencv opencv-devel opencv-python"
-          CIBW_ENVIRONMENT: OMP_NUM_THREADS=2
-                            OPENBLAS_NUM_THREADS=2
-          CIBW_BUILD: cp${{ matrix.python }}-${{ matrix.platform_id }}
-          CIBW_BUILD_VERBOSITY: 1
-          CIBW_ARCHS: all
-          CIBW_MANYLINUX_X86_64_IMAGE: ${{ matrix.manylinux_image }}
-          CIBW_MANYLINUX_I686_IMAGE: ${{ matrix.manylinux_image }}
+  make_sdist:
+    name: Make SDist
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0  # Optional, use if you use setuptools_scm
+        submodules: true  # Optional, use if you have submodules
 
-          # Run the package tests using `pytest`
-          CIBW_TEST_COMMAND: pytest {package}/tests
-          CIBW_TEST_SKIP: "*-macosx_arm64"
-          CIBW_TEST_REQUIRES: pytest threadpoolctl
-          
-        run: python -m cibuildwheel --output-dir wheelhouse
+    - name: Build SDist
+      run: pipx run build --sdist
 
-      - 
-        name: Store artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          path: wheelhouse/*.whl
-      -
-        name: Publish to testpypi
-        run: python -m pip install --upgrade twine
-             python -m twine upload --repository testpypi wheelhouse/*
+    - uses: actions/upload-artifact@v3
+      with:
+        path: dist/*.tar.gz
+
+  upload_all:
+    needs: [build_wheels, make_sdist]
+    runs-on: ubuntu-latest
+    if: github.event_name == 'release' && github.event.action == 'published'
+    steps:
+    - uses: actions/download-artifact@v3
+      with:
+        name: artifact
+        path: dist
+
+    - uses: pypa/gh-action-pypi-publish@v1.5.0
+      with:
+        user: __token__
+        password: ${{ secrets.BMS_DEPLOY_TESTPYPI_TOKEN }}
+        repository_url: https://test.pypi.org/legacy/

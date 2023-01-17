@@ -79,7 +79,7 @@ jobs:
             platform_id: macosx_arm64
 
     steps:
-      - name: Checkout nanopyx
+      - name: Checkout pyx2pxd
         uses: actions/checkout@v3
 
       - name: Setup Python
