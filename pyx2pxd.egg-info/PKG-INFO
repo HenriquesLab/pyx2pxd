@@ -1,0 +1,18 @@
+Metadata-Version: 2.1
+Name: pyx2pxd
+Version: 0.0.1
+Summary: Auto generate pxd files from pyx by extracting function and class signatures
+Home-page: https://github.com/brunomsaraiva/pyx2pxd
+Author: Bruno Manuel Santos Saraiva
+Author-email: Ricardo Henriques <ricardo.jv.henriques@gmail.com>, Bruno Saraiva <bruno.msaraiva2@gmail.com>
+Maintainer-email: Bruno Saraiva <bruno.msaraiva2@gmail.com>
+Project-URL: repository, https://github.com/HenriquesLab/pyx2pxd
+Project-URL: bug_tracker, https://github.com/HenriquesLab/pyx2pxd/issues
+Keywords: NanoJ,Super-Resolution Microscopy,Fluorescence,BioImage Analysis
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+License-File: LICENSE
+License-File: AUTHORS.rst
