@@ -87,4 +87,4 @@ jobs:
           --user
       - name: Build a binary wheel and a source tarball
         run: >-
-          python -m build /Users/runner/work/pyx2pxd --sdist --wheel --outdir dist/
+          python -m build /Users/runner/work/pyx2pxd/pyx2pxd --sdist --wheel --outdir dist/
