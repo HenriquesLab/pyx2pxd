@@ -108,7 +108,7 @@ jobs:
         submodules: true  # Optional, use if you have submodules
 
     - name: Build SDist
-      run: pipx run build --sdist
+      run: pipx run build --sdist --wheel
 
     - uses: actions/upload-artifact@v3
       with:
