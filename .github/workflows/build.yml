@@ -1,8 +1,7 @@
 name: Build wheels
 
 on:
-  release:
-    types: [published]
+  push
 
 jobs:
   build_wheels:
