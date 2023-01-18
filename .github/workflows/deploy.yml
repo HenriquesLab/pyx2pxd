@@ -96,7 +96,7 @@ jobs:
           --user
       - name: Build a binary wheel and a source tarball
         run: >-
-          python -m build --sdist --wheel --outdir dist/
+          python -m build --wheel --outdir dist/
 
       - uses: actions/upload-artifact@v3
         with:
@@ -111,8 +111,8 @@ jobs:
         fetch-depth: 0  # Optional, use if you use setuptools_scm
         submodules: true  # Optional, use if you have submodules
 
-    # - name: Build SDist
-    #   run: pipx run build --sdist
+    - name: Build SDist
+      run: pipx run build --sdist --outdir dist/
 
     - uses: actions/upload-artifact@v3
       with:
