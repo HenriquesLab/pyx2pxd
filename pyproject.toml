@@ -9,7 +9,7 @@ build-backend = "setuptools.build_meta"
 [project]
 # For an example see REF: https://packaging.python.org/en/latest/specifications/declaring-project-metadata/
 name = "pyx2pxd"
-version = "0.1.1"
+version = "0.1.2"
 description = "Auto generate pxd files from pyx by extracting function and class signatures"
 readme = "README.md"
 requires-python = ">=3.9"
