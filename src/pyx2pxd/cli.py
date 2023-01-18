@@ -2,16 +2,20 @@
 import argparse
 import sys
 
+from . import pyx2pxd
+
 
 def main():
-    """Console script for pyx2pxd."""
+    """Console script for pyx2pxd.
+    Pass path to dir where pyx2pxd should look for .pyx files as argument.
+    >>> pyx2pxd example_dir"""
     parser = argparse.ArgumentParser()
     parser.add_argument('_', nargs='*')
     args = parser.parse_args()
+    
+    pyx2pxd.main()
 
     print("Arguments: " + str(args._))
-    print("Replace this message by putting your code into "
-          "pyx2pxd.cli.main")
     return 0
 
 
