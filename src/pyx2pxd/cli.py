@@ -15,7 +15,7 @@ def main():
     
     pyx2pxd.main()
 
-    print("Arguments: " + str(args._))
+    # print("Arguments: " + str(args._))
     return 0
 
 
