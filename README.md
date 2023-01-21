@@ -14,6 +14,12 @@ You can install `pyx2pxd` via [pip]:
 pip install pyx2pxd
 ```
 
+## Running
+
+```shell
+pyx2pxd path_with_pyx_files
+```
+
 ## License
 
 Distributed under the terms of the [GNU GPL v2.0] license,
