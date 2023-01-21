@@ -3,22 +3,26 @@
 """Tests for `pyx2pxd` package."""
 
 import pytest
+import os
 
 
-from pyx2pxd import pyx2pxd
+from pyx2pxd.pyx2pxd import autogenerate_pxd_files
 
 
 @pytest.fixture
-def response():
-    """Sample pytest fixture.
-
-    See more at: http://doc.pytest.org/en/latest/fixture.html
+def sanbox_path() -> str:
     """
-    # import requests
-    # return requests.get('https://github.com/audreyr/cookiecutter-pypackage')
+    Get the sandbox directory for testing
+    """
+    path = os.path.join(os.path.dirname(__file__), "..", "sandbox")
+    return path
 
 
-def test_content(response):
-    """Sample pytest test function with the pytest fixture as an argument."""
-    # from bs4 import BeautifulSoup
-    # assert 'GitHub' in BeautifulSoup(response.content).title.string
+def test_pyx2pxd(sanbox_path: str):
+    """
+    Test the pyx2pxd function
+    """
+    autogenerate_pxd_files(sanbox_path)
+    assert os.system("cythonize -i " + os.path.join(sanbox_path, "*.pyx")) == 0
+    
+
