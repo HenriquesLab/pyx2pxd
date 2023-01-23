@@ -53,7 +53,7 @@ def autogenerate_pxd_file(pyx_filename: str):
                 if line.startswith("from") or ignore:
                     pxd_lines.append(line)
 
-    pxd_lines.append("")
+    # pxd_lines.append("")
 
     # read the pyx file
     with open(pyx_filename, "r") as f:
@@ -69,7 +69,6 @@ def autogenerate_pxd_file(pyx_filename: str):
                 pxd_lines.append("")
                 pxd_lines.append(line)
             elif "# autogen_pxd: " in line:
-                print(line)
                 pxd_lines.append(line.replace("# autogen_pxd: ", ""))
             elif (
                 (line.startswith("cdef") or line.startswith("    cdef"))
