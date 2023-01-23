@@ -57,20 +57,20 @@
                         <label class="view-source-button" for="mod-cli-view-source"><span>View Source</span></label>
 
                         <div class="pdoc-code codehilite"><pre><span></span><span id="L-1"><a href="#L-1"><span class="linenos"> 1</span></a><span class="sd">&quot;&quot;&quot;Console script for pyx2pxd.&quot;&quot;&quot;</span>
-</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="kn">import</span> <span class="nn">argparse</span>
-</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a><span class="kn">import</span> <span class="nn">sys</span>
-</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a>
+</span><span id="L-2"><a href="#L-2"><span class="linenos"> 2</span></a><span class="kn">import</span> <span class="nn">sys</span>
+</span><span id="L-3"><a href="#L-3"><span class="linenos"> 3</span></a>
+</span><span id="L-4"><a href="#L-4"><span class="linenos"> 4</span></a><span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">pyx2pxd</span>
 </span><span id="L-5"><a href="#L-5"><span class="linenos"> 5</span></a>
-</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Console script for pyx2pxd.&quot;&quot;&quot;</span>
-</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a>    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
-</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
-</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a>    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+</span><span id="L-6"><a href="#L-6"><span class="linenos"> 6</span></a>
+</span><span id="L-7"><a href="#L-7"><span class="linenos"> 7</span></a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span><span id="L-8"><a href="#L-8"><span class="linenos"> 8</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="L-9"><a href="#L-9"><span class="linenos"> 9</span></a><span class="sd">    Console script for pyx2pxd.</span>
+</span><span id="L-10"><a href="#L-10"><span class="linenos">10</span></a><span class="sd">    Pass path to dir where pyx2pxd should look for .pyx files as argument.</span>
 </span><span id="L-11"><a href="#L-11"><span class="linenos">11</span></a>
-</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Arguments: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">_</span><span class="p">))</span>
-</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Replace this message by putting your code into &quot;</span>
-</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a>          <span class="s2">&quot;pyx2pxd.cli.main&quot;</span><span class="p">)</span>
-</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a>    <span class="k">return</span> <span class="mi">0</span>
+</span><span id="L-12"><a href="#L-12"><span class="linenos">12</span></a><span class="sd">    </span>
+</span><span id="L-13"><a href="#L-13"><span class="linenos">13</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="L-14"><a href="#L-14"><span class="linenos">14</span></a>
+</span><span id="L-15"><a href="#L-15"><span class="linenos">15</span></a>    <span class="n">pyx2pxd</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </span><span id="L-16"><a href="#L-16"><span class="linenos">16</span></a>
 </span><span id="L-17"><a href="#L-17"><span class="linenos">17</span></a>
 </span><span id="L-18"><a href="#L-18"><span class="linenos">18</span></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
@@ -90,20 +90,20 @@
 
     </div>
     <a class="headerlink" href="#main"></a>
-            <div class="pdoc-code codehilite"><pre><span></span><span id="main-7"><a href="#main-7"><span class="linenos"> 7</span></a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
-</span><span id="main-8"><a href="#main-8"><span class="linenos"> 8</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;Console script for pyx2pxd.&quot;&quot;&quot;</span>
-</span><span id="main-9"><a href="#main-9"><span class="linenos"> 9</span></a>    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="o">.</span><span class="n">ArgumentParser</span><span class="p">()</span>
-</span><span id="main-10"><a href="#main-10"><span class="linenos">10</span></a>    <span class="n">parser</span><span class="o">.</span><span class="n">add_argument</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">,</span> <span class="n">nargs</span><span class="o">=</span><span class="s1">&#39;*&#39;</span><span class="p">)</span>
-</span><span id="main-11"><a href="#main-11"><span class="linenos">11</span></a>    <span class="n">args</span> <span class="o">=</span> <span class="n">parser</span><span class="o">.</span><span class="n">parse_args</span><span class="p">()</span>
+            <div class="pdoc-code codehilite"><pre><span></span><span id="main-8"><a href="#main-8"><span class="linenos"> 8</span></a><span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+</span><span id="main-9"><a href="#main-9"><span class="linenos"> 9</span></a><span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+</span><span id="main-10"><a href="#main-10"><span class="linenos">10</span></a><span class="sd">    Console script for pyx2pxd.</span>
+</span><span id="main-11"><a href="#main-11"><span class="linenos">11</span></a><span class="sd">    Pass path to dir where pyx2pxd should look for .pyx files as argument.</span>
 </span><span id="main-12"><a href="#main-12"><span class="linenos">12</span></a>
-</span><span id="main-13"><a href="#main-13"><span class="linenos">13</span></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Arguments: &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">args</span><span class="o">.</span><span class="n">_</span><span class="p">))</span>
-</span><span id="main-14"><a href="#main-14"><span class="linenos">14</span></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Replace this message by putting your code into &quot;</span>
-</span><span id="main-15"><a href="#main-15"><span class="linenos">15</span></a>          <span class="s2">&quot;pyx2pxd.cli.main&quot;</span><span class="p">)</span>
-</span><span id="main-16"><a href="#main-16"><span class="linenos">16</span></a>    <span class="k">return</span> <span class="mi">0</span>
+</span><span id="main-13"><a href="#main-13"><span class="linenos">13</span></a><span class="sd">    </span>
+</span><span id="main-14"><a href="#main-14"><span class="linenos">14</span></a><span class="sd">    &quot;&quot;&quot;</span>
+</span><span id="main-15"><a href="#main-15"><span class="linenos">15</span></a>
+</span><span id="main-16"><a href="#main-16"><span class="linenos">16</span></a>    <span class="n">pyx2pxd</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
 </span></pre></div>
 
 
-            <div class="docstring"><p>Console script for pyx2pxd.</p>
+            <div class="docstring"><p>Console script for pyx2pxd.
+Pass path to dir where pyx2pxd should look for .pyx files as argument.</p>
 </div>
 
 
