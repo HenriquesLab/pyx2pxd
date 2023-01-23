@@ -1,8 +1,7 @@
 # pyx2pxd
 
 
-Simple library to auto generate pxd files from pyx by extracting function and class signatures. <br>
-Initially developed to aid in the [NanoPyx](https://github.com/HenriquesLab/NanoPyx) project.
+Simple library to automatically to auto generate pxd files from pyx by extracting function and class signatures.
 
 ---
 
@@ -15,19 +14,10 @@ You can install `pyx2pxd` via [pip]:
 pip install pyx2pxd
 ```
 
-## Usage
+## Running
 
 ```shell
-pyx2pxd folder_path_to_process
-```
-
-*Note*: pyx2pxd will only analyze pyx files that contain the comment <code># cython: autogen_pxd=True</code>. For example:
-
-```code
-# cython: infer_types=True, wraparound=False, nonecheck=False, boundscheck=False, cdivision=True, language_level=3, profile=True, autogen_pxd=True
-
-from libc.math cimport fabs
-...
+pyx2pxd path_with_pyx_files
 ```
 
 ## License

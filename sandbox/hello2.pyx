@@ -2,3 +2,14 @@
 
 cdef float repeater(float v):
     return v
+
+
+cdef class Repeater2:
+
+    # autogen_pxd: cdef float v
+
+    def __init__(self, v):
+        self.v = v
+
+    cdef float repeat(self):
+        return self.v
