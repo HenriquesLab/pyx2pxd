@@ -54,5 +54,5 @@ jobs:
     - uses: codecov/codecov-action@v3
       with:
         fail_ci_if_error: false # optional (default = false)
-        files: ./coverage.xml # optional
+        files: coverage.xml # optional
         verbose: true # optional (default = false)
