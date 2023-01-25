@@ -47,4 +47,10 @@ jobs:
     - 
       name: Test with pytest
       run: |
-        pytest
+        pytest --cov
+
+    - uses: actions/checkout@master
+    - uses: codecov/codecov-action@v3
+      with:
+        fail_ci_if_error: false # optional (default = false)
+        verbose: true # optional (default = false)
