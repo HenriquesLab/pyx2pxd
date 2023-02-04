@@ -24,5 +24,3 @@ def test_pyx2pxd(sanbox_path: str):
     """
     autogenerate_pxd_files(sanbox_path)
     assert os.system("cythonize -i " + os.path.join(sanbox_path, "*.pyx")) == 0
-    
-
