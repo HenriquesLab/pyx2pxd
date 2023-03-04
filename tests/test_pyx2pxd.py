@@ -2,7 +2,6 @@
 
 """Tests for `pyx2pxd` package."""
 
-import pytest
 import os
 from pyx2pxd.pyx2pxd import autogenerate_pxd_files
 
@@ -21,8 +20,9 @@ def test_pyx2pxd():
     file.writelines(lines_to_write)
     file.close()
     autogenerate_pxd_files(path)
-    assert func_name[:-2] in open(os.path.join(path, "testpyx.pxd"), "r").readlines()[-1]
+    assert (
+        func_name[:-2]
+        in open(os.path.join(path, "testpyx.pxd"), "r").readlines()[-1]
+    )
     os.remove(os.path.join(path, "testpyx.pyx"))
     os.remove(os.path.join(path, "testpyx.pxd"))
-    
-
