@@ -13,6 +13,12 @@ You can install `pyx2pxd` via [pip]:
 pip install pyx2pxd
 ```
 
+To install latest development version :
+
+```shell
+pip install git+https://github.com/HenriquesLab/pyx2pxd.git
+```
+
 ## Usage
 
 ```shell
